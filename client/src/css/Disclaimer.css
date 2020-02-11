@@ -1,0 +1,20 @@
+#disclaimer-content {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: lightgrey;
+    width: 100%;
+    z-index: 2;
+}
+
+@media (max-width: 576px) {
+    #disclaimer-content {
+        position: relative;
+    }
+}
+
+@media (min-width: 576px) {
+    #disclaimer-content {
+        position: absolute;
+    }
+}

@@ -1,0 +1,9 @@
+#unmatched-content {
+    background-color: #1F1F1F;
+    min-height: 100vh;
+}
+
+#unmatched-header {
+    color: lightgrey;
+    font-size: 15vh;
+}

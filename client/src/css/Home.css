@@ -1,0 +1,16 @@
+.jumbotron {
+    margin-bottom: 0 !important;
+}
+
+#home-navbar-brand {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+#home-navbar {
+    background-color: rgb(0, 0, 0, 0) !important;
+}
+
+.fixed-top {
+    position: absolute !important;
+}

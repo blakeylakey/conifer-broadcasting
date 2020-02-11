@@ -1,0 +1,13 @@
+/client/node_modules/
+/client/build/
+/client/.gitignore
+/client/package-lock.json
+/client/README.md
+/server/node_modules/
+/server/build/
+/server/.gcloudignore
+/server/.gitignore
+/server/package-lock.json
+
+node_modules/
+build/
