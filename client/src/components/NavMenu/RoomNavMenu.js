@@ -4,9 +4,11 @@ import { Navbar } from "react-bootstrap";
 import "../../css/bootstrap.min.css";
 import "../../css/RoomNavMenu.css";
 
+import { Link } from "react-router-dom";
+
 function RoomNavMenu(props) {
   let fixed = props.fixed ? "top" : "";
-
+  const navStyle = { textDecoration: "none" };
   return (
     <Navbar
       className="shadow-lg"
@@ -15,7 +17,7 @@ function RoomNavMenu(props) {
       variant="dark"
       fixed={fixed}
     >
-      <Navbar.Brand href="/">
+      <Link to="/" style={navStyle} className="navbar-brand">
         <img
           src="/coniferlogo_simple.svg"
           width="30"
@@ -24,7 +26,7 @@ function RoomNavMenu(props) {
           alt="conifer logo room"
         />
         conifer
-      </Navbar.Brand>
+      </Link>
     </Navbar>
   );
 }
