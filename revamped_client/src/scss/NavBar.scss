@@ -1,0 +1,86 @@
+@import "./colors.scss";
+
+.nav-bar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-bar-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30%;
+  list-style: none;
+}
+
+.nav-bar-brand a {
+  text-decoration: none;
+  color: $main_black;
+}
+
+.nav-bar-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-bar-link a {
+  text-decoration: none;
+  color: $main_black;
+  padding-bottom: 2px;
+  position: relative;
+  width: 100%;
+  &:before {
+    content: "";
+    z-index: -1;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: -2px;
+    margin-right: -2px;
+    top: 65%;
+    height: 0;
+    background-color: $main_yellow;
+    -webkit-transition: all 0.3s ease-in-out;
+  }
+
+  &:hover:before {
+    height: 8px;
+  }
+}
+
+.active a {
+  &:before {
+    height: 8px;
+  }
+}
+
+.temp-hidden a {
+  &:before {
+    height: 0;
+  }
+}
+
+.nav-bar-sign-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-bar-sign-up a {
+  text-decoration: none;
+  color: $main_black;
+  position: relative;
+  background-color: $main_yellow;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  padding-left: 3.7rem;
+  padding-right: 3.7rem;
+  border-radius: 1.5rem;
+  margin-left: 1.5rem;
+}
