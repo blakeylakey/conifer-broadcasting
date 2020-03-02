@@ -1,5 +1,5 @@
 import React from "react";
 
-const Support = () => <div>Support</div>;
+const Support = () => <div>support</div>;
 
 export default Support;

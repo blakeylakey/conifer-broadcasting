@@ -1,0 +1,54 @@
+@import "./colors.scss";
+
+.main-home-social-share-container {
+  position: absolute;
+  bottom: 0;
+  left: ((100%-65%)/2);
+  width: 65%;
+  height: 3rem;
+  box-shadow: 0.25rem -0.25rem 1rem $secondary_gray;
+  box-shadow: -0.25rem -0.25rem 1rem $secondary_gray;
+  background-color: $main_white;
+  z-index: -1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+}
+
+.main-home-social-share-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 1.25rem;
+}
+
+.main-home-social-share-close {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 1.25rem;
+}
+
+.main-home-social-share-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  & img {
+    height: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.main-home-social-share-close-icon-close {
+  height: 1rem !important;
+}
+
+.hidden-social-share {
+  height: 0 !important;
+  display: none;
+}
