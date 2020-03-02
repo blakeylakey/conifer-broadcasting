@@ -13,6 +13,14 @@ const NavBar = ({ handler, active, hoverIn, hoverOut }) => {
       <h1 className="nav-bar-brand" onClick={() => handler("home")}>
         <Link to="/">Conifer Broadcasting</Link>
       </h1>
+      <div className="nav-bar-hamburger">
+        <img
+          className="nav-bar-hamburger-icon"
+          src="./burger.png"
+          height="30px"
+        />
+      </div>
+
       <ul className="nav-bar-links" onMouseOver={hoverIn} onMouseOut={hoverOut}>
         {navLinks.map(el => {
           const activeLink = el.value === active ? "active" : "";

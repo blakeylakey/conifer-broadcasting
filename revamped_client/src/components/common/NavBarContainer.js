@@ -33,8 +33,10 @@ const NavBarContainer = ({ activeTab, location, actions }) => {
 
   // on initial render, set the active tab by the location prop
   useEffect(() => {
-    actions.changeActiveTab(location.split("/")[1]);
-  });
+    const currentTab =
+      location.split("/")[1] === "" ? "home" : location.split("/")[1];
+    actions.changeActiveTab(currentTab);
+  }, []);
 
   return (
     <NavBar

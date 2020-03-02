@@ -1,0 +1,39 @@
+@import "./colors.scss";
+
+.main-home-social-buttons-container {
+  position: absolute;
+  top: (100%-10%)/2;
+  left: 5%;
+  height: 10%;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (min-width: 992px) {
+  .main-home-social-buttons-container {
+    display: flex;
+  }
+}
+
+.main-home-social-buttons-icons-a {
+  padding: 0.75rem;
+  &:hover {
+    border-top: 3px solid $main_black;
+    border-left: 3px solid $main_black;
+    border-bottom: 1px solid $main_black;
+    border-right: 1px solid $main_black;
+    border-radius: 50%;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 5%;
+      height: 3px;
+      background-color: $main_black;
+    }
+  }
+}
+
+.main-home-social-buttons-icons-img {
+  height: 1rem;
+}

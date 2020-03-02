@@ -1,1 +1,3 @@
 export const CHANGE_ACTIVE_TAB = "CHANGE_ACTIVE_TAB";
+export const SET_ROOM_ID = "SET_ROOM_ID";
+export const SET_INITIAL_LOADED = "SET_INITIAL_LOADED";

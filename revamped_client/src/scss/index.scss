@@ -1,9 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Spartan:300,400,700,800&display=swap");
+@import "./colors.scss";
 
 * {
   font-family: "Spartan";
+  &::selection {
+    background: $main_yellow;
+    color: $main_white;
+  }
 }
 
 // Import all the scss stuff here so that I only need one import in app
 @import "./NavBar.scss";
 @import "./Home.scss";
+@import "./CastLayout.scss";

@@ -4,17 +4,24 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 80%;
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+  .nav-bar-container {
+    width: 80%;
+  }
 }
 
 .nav-bar-links {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 30%;
   list-style: none;
+  min-width: 35%;
 }
 
 .nav-bar-brand a {
@@ -26,6 +33,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
 }
 
 .nav-bar-link a {
@@ -52,6 +61,12 @@
   &:hover:before {
     height: 8px;
   }
+}
+
+.nav-bar-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .active a {

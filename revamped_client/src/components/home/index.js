@@ -1,11 +1,13 @@
 import React from "react";
 import Hero from "./Hero";
-import SocialShare from "./SocialShare";
+import SignUpEmail from "./SignUpEmail";
+import SocialButtons from "./SocialButtons";
 
 const Home = () => (
   <main className="main-home-page">
+    <SocialButtons />
     <Hero />
-    <SocialShare />
+    <SignUpEmail />
   </main>
 );
 

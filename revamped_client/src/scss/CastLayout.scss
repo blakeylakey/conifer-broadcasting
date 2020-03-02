@@ -1,0 +1,40 @@
+@import "./colors.scss";
+
+$main_width: 80%;
+
+.main-cast-container {
+  z-index: -1;
+  width: $main_width;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.side-cast-container {
+  z-index: -1;
+  width: 100%-$main_width;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: $main_width;
+}
+
+.main-cast-content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.side-cast-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-cast-content-video {
+  box-shadow: 2rem 2rem 3rem $main_gray;
+}
