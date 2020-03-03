@@ -1,0 +1,17 @@
+@import "./colors.scss";
+
+.join-content-form-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 900;
+  position: relative;
+  &:after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 0.25rem;
+    background-color: $main_gray;
+    bottom: -15%;
+    left: 0;
+  }
+}

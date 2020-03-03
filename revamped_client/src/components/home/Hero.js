@@ -7,13 +7,16 @@ import { connect } from "react-redux";
 
 const Hero = ({ initialLoaded, actions }) => {
   useEffect(() => {
-    window.addEventListener("load", () => {
+    // sets initial loaded to decide whether to play the hero bg animation
+    // on first render of hero, it'll play and set the initial load
+    // all subsequent renders wont play, and instead just load regular style
+    if (!initialLoaded) {
       const bg = document.getElementsByClassName(
         "main-home-hero-bg-img-play-icon"
       )[0];
       bg.classList.add("loaded");
       actions.setInitialLoaded();
-    });
+    }
   });
   return (
     <>
@@ -28,7 +31,7 @@ const Hero = ({ initialLoaded, actions }) => {
           <h1>
             ScreenSharing
             <span className="main-home-hero-text-element-happy-face">
-              <img src="/emoji.png" height="30px" />
+              <img src="/emoji.png" />
             </span>
           </h1>
         </div>

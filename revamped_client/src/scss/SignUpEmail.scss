@@ -3,81 +3,49 @@
 .main-home-signup-email-container {
   position: absolute;
   bottom: 0;
-  height: 3rem;
-  box-shadow: 0.25rem -0.25rem 1rem $secondary_gray;
-  box-shadow: -0.25rem -0.25rem 1rem $secondary_gray;
-  background-color: $main_white;
-  z-index: -1;
-
-  display: none;
+  display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-home-signup-email-content-container {
+  position: relative;
+  width: 60%;
+  height: 2rem;
   transition: all 0.3s ease-in-out;
 }
 
-@media (min-width: 768px) {
-  .main-home-signup-email-container {
-    display: flex;
-    width: 90%;
-    left: ((100%-90%)/2);
-  }
-}
-
-@media (min-width: 992px) {
-  .main-home-signup-email-container {
-    display: flex;
-    width: 80%;
-    left: ((100%-80%)/2);
-  }
-}
-
-@media (min-width: 1200px) {
-  .main-home-signup-email-container {
-    display: flex;
-    width: 65%;
-    left: ((100%-65%)/2);
-  }
-}
-
 .main-home-signup-email-input {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 1.25rem;
-}
-
-.main-home-signup-email-input-box {
-  margin-left: 0.5rem;
-}
-
-.main-home-signup-email-close {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-right: 1.25rem;
-}
-
-.main-home-signup-email-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  & img {
-    height: 2rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    &:hover {
-      cursor: pointer;
-    }
+  width: 100%;
+  height: 100%;
+  padding-left: 1rem;
+  border: 1px solid $main_gray;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 1rem $main_gray;
+    border-color: transparent !important;
+  }
+  &:focus {
+    outline: none !important;
+    box-shadow: 0 0 1rem $main_gray;
+    border-color: transparent !important;
   }
 }
 
-.main-home-signup-email-close-icon-close {
-  height: 1rem !important;
+#main-home-signup-email-close {
+  position: absolute;
+  height: 50%;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 0;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .hidden-signup-email {
   height: 0 !important;
-  & * {
-    display: none;
-  }
 }

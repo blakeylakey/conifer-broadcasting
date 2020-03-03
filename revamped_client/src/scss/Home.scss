@@ -52,4 +52,10 @@
   position: absolute;
   right: -2rem;
   top: -4rem;
+  & img {
+    height: 1.75rem;
+    background-color: white;
+    border-radius: 50%;
+    border-color: transparent;
+  }
 }

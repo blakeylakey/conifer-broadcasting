@@ -1,6 +1,7 @@
 @import "./colors.scss";
+@import "./JoinContent.scss";
 
-$main_width: 80%;
+$main_width: 70%;
 
 .main-cast-container {
   z-index: -1;
@@ -8,19 +9,11 @@ $main_width: 80%;
   height: 100%;
   position: absolute;
   top: 0;
-  left: 0;
+  left: (100%-$main_width)/2;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.side-cast-container {
-  z-index: -1;
-  width: 100%-$main_width;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: $main_width;
+  align-items: center;
 }
 
 .main-cast-content-container {
@@ -29,12 +22,72 @@ $main_width: 80%;
   justify-content: center;
 }
 
-.side-cast-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.main-cast-content-video {
+  width: 80%;
+  box-shadow: 2rem 2rem 3rem $main_gray;
 }
 
-.main-cast-content-video {
-  box-shadow: 2rem 2rem 3rem $main_gray;
+.cast-search-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 60%;
+  position: relative;
+}
+
+#cast-search-bar-icon {
+  height: 1.5rem;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+#cast-search-bar-random-icon {
+  height: 2rem;
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.cast-search-bar-input-form {
+  width: 100%;
+  background-color: $main_white;
+  border: 1px solid $main_gray;
+  border-radius: 3rem;
+  transition: all 0.2s ease-in-out;
+  &:focus {
+    outline: none;
+    border-color: transparent !important;
+    box-shadow: 0 0 1rem $main_gray;
+  }
+  &:hover {
+    border-color: transparent !important;
+    box-shadow: 0 0 1rem $main_gray;
+  }
+}
+
+.cast-search-bar-input {
+  width: 100%;
+  height: 2.5rem;
+  padding-left: 3rem;
+  background-color: transparent;
+  border-color: transparent;
+  &:focus {
+    outline: none;
+  }
+}
+
+.cast-search-bar-warning {
+  width: 50%;
+  color: $secondary_gray;
+  margin-top: 2rem;
+  font-size: 0.7rem;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.displayed {
+  opacity: 1 !important;
 }
