@@ -3,3 +3,4 @@ export const SET_ROOM_ID = "SET_ROOM_ID";
 export const SET_INITIAL_LOADED = "SET_INITIAL_LOADED";
 export const SET_INITIATOR = "SET_INITIATOR";
 export const REMOVE_INITIATOR = "REMOVE_INITIATOR";
+export const ADD_STREAMER = "ADD_STREAMER";

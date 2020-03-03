@@ -15,7 +15,7 @@ function getStream() {
   }
 }
 
-function p2pHandler(endpoint, initiator, roomId) {
+function p2pHandler(endpoint, initiator, roomId, cb) {
   // Needed variables
   /* let endpoint = endpoint;
     let initiator = init;
@@ -39,6 +39,7 @@ function p2pHandler(endpoint, initiator, roomId) {
           trickle: false,
           stream: stream
         });
+        cb();
 
         // When we receive our sdp
         receivers[id].on("signal", function(data) {
