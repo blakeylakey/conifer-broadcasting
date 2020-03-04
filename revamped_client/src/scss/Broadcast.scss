@@ -23,10 +23,6 @@ $main_width: 80%;
 }
 
 .main-broadcast-video-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 60%;
   box-shadow: 0 0 1rem $secondary_gray;
 }
@@ -35,10 +31,12 @@ $main_width: 80%;
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+
   & h2 {
     margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
   }
 }
 
@@ -46,9 +44,22 @@ $main_width: 80%;
   height: 100%;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   margin-right: 0.5rem;
+
+  & p {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.broadcast-viewer-count {
+  padding-left: 0.5rem;
+  font-weight: 400;
+}
+
+.broadcast-is-connected {
+  margin-right: 1rem;
 }
 
 #broadcast-video {
@@ -56,5 +67,5 @@ $main_width: 80%;
 }
 
 #broadcast-viewer-icon {
-  height: 2rem;
+  height: 1rem;
 }

@@ -1,5 +1,5 @@
 import * as types from "./actionTypes";
 
-export const addStreamer = () => {
-  return { type: types.ADD_STREAMER };
+export const setStreamerCount = count => {
+  return { type: types.SET_STREAMER_COUNT, count };
 };

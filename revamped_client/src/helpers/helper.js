@@ -15,7 +15,7 @@ function getStream() {
   }
 }
 
-function p2pHandler(endpoint, initiator, roomId, cb) {
+function p2pHandler(endpoint, initiator, roomId, setStreamers, changeConnect) {
   // Needed variables
   /* let endpoint = endpoint;
     let initiator = init;
@@ -30,6 +30,8 @@ function p2pHandler(endpoint, initiator, roomId, cb) {
 
       // Join the room
       socket.emit("initiator join", roomId);
+      // Let front end know their is one streamer
+      setStreamers(1);
 
       // When a new receiver joins we have to deal with it
       socket.on("new peer", id => {
@@ -39,7 +41,6 @@ function p2pHandler(endpoint, initiator, roomId, cb) {
           trickle: false,
           stream: stream
         });
-        cb();
 
         // When we receive our sdp
         receivers[id].on("signal", function(data) {
@@ -56,6 +57,14 @@ function p2pHandler(endpoint, initiator, roomId, cb) {
         receivers[id].signal(otherSDP);
       });
 
+      socket.on("streamers count is", count => {
+        if (count !== null) {
+          setStreamers(count);
+        }
+      });
+
+      // Set the connected value to true, since we're connected now
+      changeConnect();
       // We should play the stream on initiators tab too
       const video = document.querySelector("video");
       video.srcObject = stream;
@@ -73,6 +82,9 @@ function p2pHandler(endpoint, initiator, roomId, cb) {
     // Join room
     socket.emit("receiver join", roomId);
 
+    // Get the new streamers count
+    socket.emit("get streamers count");
+
     // Handle no initiator situations
     socket.on("no initiator", () => {
       window.alert(
@@ -86,6 +98,17 @@ function p2pHandler(endpoint, initiator, roomId, cb) {
       peer.signal(otherSDP);
     });
 
+    socket.on("streamers count is", count => {
+      if (count !== null) {
+        setStreamers(count);
+      }
+    });
+
+    // change connect when initiator disconnects
+    socket.on("initiator disconnected", () => {
+      changeConnect();
+    });
+
     // When we receive our sdp
     peer.on("signal", data => {
       let mySDP = JSON.stringify(data);
@@ -95,9 +118,10 @@ function p2pHandler(endpoint, initiator, roomId, cb) {
 
     // Handle our stream
     peer.on("stream", stream => {
+      // change connect since we're connected
+      changeConnect();
       const video = document.querySelector("video");
       video.srcObject = stream;
-      video.id = "editted";
       video.play();
     });
   }

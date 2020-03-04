@@ -48,7 +48,7 @@ const SearchBarContainer = ({ roomId, type, actions }) => {
     // set the roomid state for streaming
     actions.setRoomIdActions(roomId);
     //redirect the user
-    history.push(`/${type}/${roomId}`);
+    history.push(`/join/${roomId}`);
   };
 
   // simple little switch for joining vs starting a cast
