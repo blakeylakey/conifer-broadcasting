@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import SearchBar from "./SearchBar";
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import * as setRoomIdActions from "../../redux/actions/setRoomIdActions";
 import * as initiatorActions from "../../redux/actions/initiatorActions";
@@ -17,13 +17,13 @@ const SearchBarContainer = ({ roomId, type, actions }) => {
           .getElementById("cast-search-bar-warning")
           .classList.add("displayed");
       });
-    document
+    /* document
       .getElementById("cast-search-bar-input")
       .addEventListener("mouseout", () => {
         document
           .getElementById("cast-search-bar-warning")
           .classList.remove("displayed");
-      });
+      }); */
   }, []);
 
   // bring in history hook to redirect without refresh

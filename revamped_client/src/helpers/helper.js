@@ -15,7 +15,7 @@ function getStream() {
   }
 }
 
-function p2pHandler(endpoint, initiator, roomId, setStreamers, changeConnect) {
+function p2pHandler(endpoint, initiator, roomId, actions) {
   // Needed variables
   /* let endpoint = endpoint;
     let initiator = init;
@@ -31,7 +31,7 @@ function p2pHandler(endpoint, initiator, roomId, setStreamers, changeConnect) {
       // Join the room
       socket.emit("initiator join", roomId);
       // Let front end know their is one streamer
-      setStreamers(1);
+      actions.setStreamerCount(1);
 
       // When a new receiver joins we have to deal with it
       socket.on("new peer", id => {
@@ -59,12 +59,12 @@ function p2pHandler(endpoint, initiator, roomId, setStreamers, changeConnect) {
 
       socket.on("streamers count is", count => {
         if (count !== null) {
-          setStreamers(count);
+          actions.setStreamerCount(count);
         }
       });
 
       // Set the connected value to true, since we're connected now
-      changeConnect();
+      actions.setConnect();
       // We should play the stream on initiators tab too
       const video = document.querySelector("video");
       video.srcObject = stream;
@@ -100,13 +100,13 @@ function p2pHandler(endpoint, initiator, roomId, setStreamers, changeConnect) {
 
     socket.on("streamers count is", count => {
       if (count !== null) {
-        setStreamers(count);
+        actions.setStreamerCount(count);
       }
     });
 
     // change connect when initiator disconnects
     socket.on("initiator disconnected", () => {
-      changeConnect();
+      actions.remConnect();
     });
 
     // When we receive our sdp
@@ -119,7 +119,7 @@ function p2pHandler(endpoint, initiator, roomId, setStreamers, changeConnect) {
     // Handle our stream
     peer.on("stream", stream => {
       // change connect since we're connected
-      changeConnect();
+      actions.setConnect();
       const video = document.querySelector("video");
       video.srcObject = stream;
       video.play();

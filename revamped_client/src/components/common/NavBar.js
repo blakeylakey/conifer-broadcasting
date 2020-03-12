@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavBar = ({ handler, active, hoverIn, hoverOut }) => {
+const NavBar = ({ handler, active, hoverIn, hoverOut, hamburgerHandler }) => {
   // the nav links
   const navLinks = [
     { title: "Support", value: "support" },
@@ -13,15 +13,21 @@ const NavBar = ({ handler, active, hoverIn, hoverOut }) => {
       <h1 className="nav-bar-brand" onClick={() => handler("home")}>
         <Link to="/">Conifer Broadcasting</Link>
       </h1>
-      <div className="nav-bar-hamburger">
+      <div className="nav-bar-hamburger" onClick={hamburgerHandler}>
         <img
           className="nav-bar-hamburger-icon"
           src="./burger.png"
           height="30px"
+          alt="hamburger"
         />
       </div>
 
-      <ul className="nav-bar-links" onMouseOver={hoverIn} onMouseOut={hoverOut}>
+      <ul
+        className="nav-bar-links"
+        id="nav-bar-links"
+        onMouseOver={hoverIn}
+        onMouseOut={hoverOut}
+      >
         {navLinks.map(el => {
           const activeLink = el.value === active ? "active" : "";
           return (

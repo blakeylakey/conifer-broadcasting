@@ -31,12 +31,19 @@ const NavBarContainer = ({ activeTab, location, actions }) => {
     }
   };
 
+  // on hamburger click, add nav active class to nav links
+  const hamburgerHandler = e => {
+    e.preventDefault();
+    const links = document.getElementById("nav-bar-links");
+    links.classList.toggle("nav-active");
+  };
+
   // on initial render, set the active tab by the location prop
   useEffect(() => {
     const currentTab =
       location.split("/")[1] === "" ? "home" : location.split("/")[1];
     actions.changeActiveTab(currentTab);
-  }, []);
+  });
 
   return (
     <NavBar
@@ -44,6 +51,7 @@ const NavBarContainer = ({ activeTab, location, actions }) => {
       active={activeTab}
       hoverIn={hoverInHandler}
       hoverOut={hoverOutHandler}
+      hamburgerHandler={hamburgerHandler}
     />
   );
 };

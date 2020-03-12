@@ -18,6 +18,7 @@ const Hero = ({ initialLoaded, actions }) => {
       actions.setInitialLoaded();
     }
   });
+  const loaded = initialLoaded ? "loaded" : "";
   return (
     <>
       <div className="main-home-hero-text">
@@ -29,9 +30,9 @@ const Hero = ({ initialLoaded, actions }) => {
         </div>
         <div className="main-home-hero-text-element">
           <h1>
-            ScreenSharing
+            Screen Sharing
             <span className="main-home-hero-text-element-happy-face">
-              <img src="/emoji.png" />
+              <img src="/emoji.png" alt="Happy face" />
             </span>
           </h1>
         </div>
@@ -46,10 +47,21 @@ const Hero = ({ initialLoaded, actions }) => {
       </div>
       <div className="main-home-hero-bg">
         <img
-          className={`main-home-hero-bg-img-play-icon ${
-            initialLoaded ? "loaded" : ""
-          }`}
+          className={`main-home-hero-bg-img-play-icon ${loaded}`}
           src="./hero-play-icon.svg"
+          alt="hero play icon"
+        />
+        <img
+          id="main-hero-bg-img-male-face-1"
+          className={loaded}
+          src="./hero_male_face.svg"
+          alt="hero male face"
+        />
+        <img
+          id="main-hero-bg-img-female-face-1"
+          className={loaded}
+          src="./hero_female_face.svg"
+          alt="hero female face"
         />
       </div>
     </>

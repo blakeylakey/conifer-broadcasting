@@ -20,12 +20,14 @@ const SignUpEmail = () => {
           placeholder="Consider showing your support for conifer by submitting your email"
           className="main-home-signup-email-input"
           id="main-home-signup-email-input"
+          alt="email signup"
         />
         <img
           src="/close.png"
           className="main-home-signup-email-close"
           id="main-home-signup-email-close"
           onClick={handler}
+          alt="close email signup"
         />
       </div>
     </div>

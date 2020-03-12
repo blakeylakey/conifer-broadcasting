@@ -17,7 +17,7 @@ const BroadcastContainer = ({
   actions
 }) => {
   useEffect(() => {
-    const endpoint = "http://localhost:3001/";
+    const endpoint = window.location.origin;
     // if the roomid was never defined (if the user enters the url directly in bar will cause this)
     // then set the roomid real quick
     if (roomId === "" && params.roomId !== "") {
@@ -27,13 +27,7 @@ const BroadcastContainer = ({
       actions.setStreamerCount(0);
     }
 
-    p2pHandler(
-      endpoint,
-      init,
-      roomId,
-      actions.setStreamerCount,
-      actions.changeConnect
-    );
+    p2pHandler(endpoint, init, roomId, actions);
   }, []);
 
   return <Broadcast roomId={roomId} streamers={streamers} connect={connect} />;

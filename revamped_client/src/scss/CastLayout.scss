@@ -31,7 +31,7 @@ $main_width: 70%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 60%;
+  width: 90%;
   position: relative;
 }
 
@@ -57,11 +57,13 @@ $main_width: 70%;
   border: 1px solid $main_gray;
   border-radius: 3rem;
   transition: all 0.2s ease-in-out;
+
   &:focus {
     outline: none;
     border-color: transparent !important;
     box-shadow: 0 0 1rem $main_gray;
   }
+
   &:hover {
     border-color: transparent !important;
     box-shadow: 0 0 1rem $main_gray;
@@ -74,6 +76,7 @@ $main_width: 70%;
   padding-left: 3rem;
   background-color: transparent;
   border-color: transparent;
+
   &:focus {
     outline: none;
   }
@@ -90,4 +93,30 @@ $main_width: 70%;
 
 .displayed {
   opacity: 1 !important;
+}
+
+@media (min-width: 1200px) {
+  .cast-search-bar {
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-cast-container {
+    width: 100%;
+    left: 0;
+  }
+
+  .cast-search-bar {
+    width: 90%;
+  }
+
+  .cast-search-bar-input {
+    width: 60%;
+    text-overflow: ellipsis;
+  }
+
+  .cast-search-bar-warning {
+    width: 80%;
+  }
 }

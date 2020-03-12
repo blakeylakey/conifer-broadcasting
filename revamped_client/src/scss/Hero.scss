@@ -1,13 +1,17 @@
 @import "./colors.scss";
 
+$text-element-width: 100%;
+
 .main-home-hero-buttons {
   margin-top: 1.2rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+
   & span {
     margin-left: 1.2rem;
     margin-right: 1.2rem;
+
     & a {
       font-size: 1.1rem;
       color: $main_black;
@@ -33,6 +37,7 @@
   padding-right: 1.4rem;
   border: 2px solid $main_black;
   border-radius: 2rem;
+  background-color: $main_white;
 }
 
 .main-home-hero-bg-img-play-icon {
@@ -44,6 +49,127 @@
   transition: all 1s ease-in-out;
 }
 
+
+#main-hero-bg-img-male-face-1 {
+  position: absolute;
+  height: 6rem;
+  top: 52%;
+  right: 6%;
+  opacity: 0;
+  z-index: -10;
+  transition: all 1s ease-in-out;
+  transition-delay: 0.5s;
+}
+
+#main-hero-bg-img-female-face-1 {
+  position: absolute;
+  height: 7rem;
+  top: 30%;
+  right: 25%;
+  opacity: 0;
+  z-index: -10;
+  transition: all 1s ease-in-out;
+  transition-delay: 1s;
+}
+
 .loaded {
   opacity: 1 !important;
+}
+
+.main-home-hero-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 20%;
+  left: 10%;
+
+  & .main-home-hero-text-element {
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+
+    & h1 {
+      font-weight: bold;
+      font-size: 5rem;
+      letter-spacing: 0.6rem;
+      display: inline;
+      position: relative;
+
+      &:before {
+        content: "";
+        z-index: -1;
+        display: block;
+        position: absolute;
+        width: 100%;
+        bottom: 8%;
+        left: 0%;
+        height: 1.8rem;
+        background-color: $main_yellow;
+        box-shadow: 0.25rem 0.25rem 1rem $secondary_gray;
+      }
+    }
+  }
+}
+
+.main-home-hero-text-element-happy-face {
+  position: absolute;
+  right: -2rem;
+  top: -4rem;
+
+  & img {
+    height: 1.75rem;
+    background-color: white;
+    border-radius: 50%;
+    border-color: transparent;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .main-home-hero-text {
+    left: 5%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+
+  .main-home-hero-text-element h1 {
+    font-size: 3rem !important;
+    word-wrap: break-word !important;
+
+    &:before {
+      width: 100% !important;
+      height: 1rem !important;
+      box-shadow: 0 0.25rem 0.5rem $secondary_gray !important;
+    }
+
+    & .main-home-hero-text-element-happy-face {
+      right: -1rem !important;
+      top: -3rem !important;
+    }
+  }
+
+  .main-home-hero-buttons {
+    flex-direction: column !important;
+    justify-content: space-around !important;
+
+    & span {
+      margin-top: 1.25rem;
+      margin-bottom: 1.25rem;
+
+      & a {
+        font-size: 1.2rem !important;
+      }
+
+    }
+  }
+
+  .loaded {
+    opacity: 0 !important;
+  }
+
 }

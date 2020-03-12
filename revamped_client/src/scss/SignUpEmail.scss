@@ -24,10 +24,12 @@
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   transition: all 0.2s ease-in-out;
+
   &:hover {
     box-shadow: 0 0 1rem $main_gray;
     border-color: transparent !important;
   }
+
   &:focus {
     outline: none !important;
     box-shadow: 0 0 1rem $main_gray;
@@ -41,6 +43,7 @@
   top: 50%;
   transform: translate(0, -50%);
   right: 0;
+
   &:hover {
     cursor: pointer;
   }
@@ -48,4 +51,10 @@
 
 .hidden-signup-email {
   height: 0 !important;
+}
+
+@media (max-width: 576px) {
+  #main-home-signup-email-content-container {
+    height: 0 !important;
+  }
 }

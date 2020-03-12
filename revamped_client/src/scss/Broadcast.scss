@@ -69,3 +69,15 @@ $main_width: 80%;
 #broadcast-viewer-icon {
   height: 1rem;
 }
+
+@media (max-width: 768px) {
+  .main-broadcast-video-container {
+    width: 100%;
+  }
+
+
+  .main-broadcast-container {
+    width: 90%;
+    left: 5%;
+  }
+}

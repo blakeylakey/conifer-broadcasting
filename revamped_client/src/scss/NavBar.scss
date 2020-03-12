@@ -8,6 +8,7 @@
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
+  min-height: 10%;
 }
 
 @media (min-width: 1200px) {
@@ -27,6 +28,8 @@
 .nav-bar-brand a {
   text-decoration: none;
   color: $main_black;
+  position: relative;
+  z-index: 1;
 }
 
 .nav-bar-link {
@@ -43,6 +46,7 @@
   padding-bottom: 2px;
   position: relative;
   width: 100%;
+
   &:before {
     content: "";
     z-index: -1;
@@ -67,6 +71,56 @@
   display: none;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-bar-container {
+    background-color: $main_white;
+  }
+
+  .nav-bar-hamburger {
+    display: flex !important;
+  }
+
+  .nav-bar-links {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: $main_white;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 5rem;
+    padding-bottom: 2rem !important;
+    z-index: 0;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    box-shadow: 0 0 1rem $secondary_gray;
+    transform: translateY(-100%);
+    transition: all 0.6s ease-in-out;
+
+    & li {
+      margin-top: 1rem !important;
+      margin-bottom: 1rem !important;
+    }
+  }
+
+  .nav-bar-sign-up a {
+    margin-left: 0 !important;
+  }
+}
+
+.nav-active {
+  transform: translateY(0%);
 }
 
 .active a {
